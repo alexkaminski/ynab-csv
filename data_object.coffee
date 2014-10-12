@@ -29,7 +29,8 @@ class window.DataObject
 
     if @base_json.results.rows
       @base_json.results.rows.forEach (row, index) ->
-        if !limit || index < limit
+        console.log row[0]
+        if (!limit || index < limit) && row[0] != 'forecasted'
           tmp_row = {}
           ynab_cols.forEach (col) ->
             cell = row[lookup[col]]
