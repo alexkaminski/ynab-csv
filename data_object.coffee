@@ -29,7 +29,7 @@ class window.DataObject
 
     if @base_json.results.rows
       @base_json.results.rows.forEach (row, index) ->
-        if (!limit || index < limit) && typeof(row.forecasted) == 'undefined'
+        if (!limit || index < limit) && row.forecasted == 'posted'
           tmp_row = {}
           ynab_cols.forEach (col) ->
             cell = row[lookup[col]]
